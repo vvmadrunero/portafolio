@@ -30,6 +30,7 @@
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
   <!-- Material Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/material-kit.css?v=3.0.4" rel="stylesheet" />
   <!-- Nepcha Analytics (nepcha.com) -->
@@ -129,117 +130,27 @@
                 <li class="nav-item dropdown dropdown-hover mx-2">
                   <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages"
                     data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="material-icons opacity-6 me-2 text-md">dashboard</i>
-                    Pages
+                    <i class="fas fa-user opacity-6 me-2 text-xl"></i>
+                    Admin
                     <img src="../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
                   </a>
                   <div class="dropdown-menu dropdown-menu-animation ms-n3 dropdown-md p-3 border-radius-xl mt-0 mt-lg-3"
                     aria-labelledby="dropdownMenuPages">
                     <div class="d-none d-lg-block">
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
-                        Landing Pages
-                      </h6>
-                      <a href="./pages/about-us.html" class="dropdown-item border-radius-md">
-                        <span>About Us</span>
-                      </a>
-                      <a href="./pages/contact-us.html" class="dropdown-item border-radius-md">
-                        <span>Contact Us</span>
-                      </a>
-                      <a href="./pages/author.html" class="dropdown-item border-radius-md">
-                        <span>Author</span>
-                      </a>
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
-                        Account
-                      </h6>
-                      <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
-                        <span>Sign In</span>
+                      <a href="admin.php" class="dropdown-item border-radius-md">
+                        <span>Administrar</span>
                       </a>
                     </div>
 
                     <div class="d-lg-none">
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
-                        Landing Pages
-                      </h6>
-
-                      <a href="./pages/about-us.html" class="dropdown-item border-radius-md">
-                        <span>About Us</span>
-                      </a>
-                      <a href="./pages/contact-us.html" class="dropdown-item border-radius-md">
-                        <span>Contact Us</span>
-                      </a>
-                      <a href="./pages/author.html" class="dropdown-item border-radius-md">
-                        <span>Author</span>
-                      </a>
-
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
-                        Account
-                      </h6>
-                      <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
-                        <span>Sign In</span>
+                      <a href="admin.php" class="dropdown-item border-radius-md">
+                        <span>Administrar</span>
                       </a>
 
                     </div>
 
                   </div>
                 </li>
-
-                <li class="nav-item dropdown dropdown-hover mx-2">
-                  <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="material-icons opacity-6 me-2 text-md">dashboard</i>
-                    Pages
-                    <img src="../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-animation ms-n3 dropdown-md p-3 border-radius-xl mt-0 mt-lg-3"
-                    aria-labelledby="dropdownMenuPages">
-                    <div class="d-none d-lg-block">
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
-                        Landing Pages
-                      </h6>
-                      <a href="./pages/about-us.html" class="dropdown-item border-radius-md">
-                        <span>About Us</span>
-                      </a>
-                      <a href="./pages/contact-us.html" class="dropdown-item border-radius-md">
-                        <span>Contact Us</span>
-                      </a>
-                      <a href="./pages/author.html" class="dropdown-item border-radius-md">
-                        <span>Author</span>
-                      </a>
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
-                        Account
-                      </h6>
-                      <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
-                        <span>Sign In</span>
-                      </a>
-                    </div>
-
-                    <div class="d-lg-none">
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
-                        Landing Pages
-                      </h6>
-
-                      <a href="./pages/about-us.html" class="dropdown-item border-radius-md">
-                        <span>About Us</span>
-                      </a>
-                      <a href="./pages/contact-us.html" class="dropdown-item border-radius-md">
-                        <span>Contact Us</span>
-                      </a>
-                      <a href="./pages/author.html" class="dropdown-item border-radius-md">
-                        <span>Author</span>
-                      </a>
-
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
-                        Account
-                      </h6>
-                      <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
-                        <span>Sign In</span>
-                      </a>
-
-                    </div>
-
-                  </div>
-                </li>
-
 
                 <!-- <li class="nav-item my-auto ms-3 ms-lg-0">
 
@@ -272,7 +183,7 @@
         <div class="row">
           <div class="col-12 mx-auto">
             <div class="mt-n8 mt-md-n9 text-center">
-              <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="../assets/img/vanesa.jpg" alt="bruce" loading="lazy">
+              <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="../assets/img/perfil/perfil3.jpeg" alt="vanesa" loading="lazy">
             </div>
             <div class="row py-5">
               <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto">
@@ -331,28 +242,22 @@
       }
 
       // Consultar proyectos
-      $consulta = "SELECT nombre_imagen, ruta_imagen, descripcion FROM proyectos";
+      $consulta = "SELECT nombre_proyecto, ruta_imagen, descripcion_proyecto, enlace_proyecto FROM proyectos";
       $resultado = $conexion->query($consulta);
 
       // Mostrar proyectos
       if ($resultado->num_rows > 0) {
           while ($fila = $resultado->fetch_assoc()) {
               echo '<div class="col-lg-3 col-sm-6">';
-              echo '<div class="card card-plain">';
+              echo '<div class="card p-2">';
               echo '<div class="card-header p-0 position-relative">';
-              echo '<a class="d-block blur-shadow-image">';
-              echo '<img src="' . $fila['ruta_imagen'] . '" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy">';
-              echo '</a>';
+              echo '<a class="d-block blur-shadow-image"><img src="' . $fila['ruta_imagen'] . '" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy"></a>';
               echo '</div>';
               echo '<div class="card-body px-0">';
-              echo '<h5>';
-              echo '<a href="javascript:;" class="font-weight-bold text-purple">' . $fila['nombre_imagen'] . '</a>';
-              echo '</h5>';
-              echo '<p>';
-              echo $fila['descripcion'];
-              echo '</p>';
-              echo '<a href="' . $fila['nombre_imagen'] . '.html" class="text-info text-sm icon-move-right">';
-              echo '<button type="button" class="btn btn-sm btn-outline-purple text-nowrap mb-0">Ver</button>';
+              echo '<h5 class="mt-n3"><a href="javascript:;" class="font-weight-bold text-purple">' . $fila['nombre_proyecto'] . '</a></h5>';
+              echo '<p> ' . $fila['descripcion_proyecto'] . ' </p>';
+              echo '<a href="' . $fila['enlace_proyecto'] . '.html" class="text-info text-sm icon-move-right">';
+              echo '<br><button type="button" class="btn mb-n5 btn-sm btn-outline-purple text-nowrap mb-0">Ver</button>';
               echo '</a>';
               echo '</div>';
               echo '</div>';
@@ -379,52 +284,44 @@
             <h3 class="mb-5 text-purple">Mis certificados</h3>
           </div>
         </div>
+
         <div class="row">
         <?php
-      // Conexión a la base de datos
-      $conexion = new mysqli("localhost", "root", "", "bd_portafolio");
+          // Conexión a la base de datos
+          $conexion = new mysqli("localhost", "root", "", "bd_portafolio");
 
-      // Verificar la conexión
-      if ($conexion->connect_error) {
-          die("Error de conexión: " . $conexion->connect_error);
-      }
-
-      // Consultar proyectos
-      $consulta = "SELECT nombre_certf, ruta_certf, descripcion_certf FROM Certificados";
-      $resultado = $conexion->query($consulta);
-
-      // Mostrar proyectos
-      if ($resultado->num_rows > 0) {
-          while ($fila = $resultado->fetch_assoc()) {
-              echo '<div class="col-lg-3 col-sm-6">';
-              echo '<div class="card card-plain">';
-              echo '<div class="card-header p-0 position-relative">';
-              echo '<a src="' . $fila['ruta_certf'] . '" ';
-              echo '</a>';
-              echo '</div>';
-              echo '<div class="card-body px-0">';
-              echo '<h5>';
-              echo '<a href="javascript:;" class="font-weight-bold text-purple">' . $fila['nombre_certf'] . '</a>';
-              echo '</h5>';
-              echo '<p>';
-              echo $fila['descripcion'];
-              echo '</p>';
-              echo '<a href="' . $fila['nombre_certf'] . '.html" class="text-info text-sm icon-move-right">';
-              echo '<button type="button" class="btn btn-sm btn-outline-purple text-nowrap mb-0">Ver</button>';
-              echo '</a>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
+          // Verificar la conexión
+          if ($conexion->connect_error) {
+              die("Error de conexión: " . $conexion->connect_error);
           }
-      } else {
-          echo "No hay proyectos para mostrar";
-      }
 
-      // Cerrar conexión
-      $conexion->close();
-        ?>
+          // Consultar certificados
+          $consulta = "SELECT id, nombre_certf, ruta_documento FROM certificados";
+          $resultado = $conexion->query($consulta);
 
+          // Mostrar certificados
+          if ($resultado->num_rows > 0) {
+              while ($fila = $resultado->fetch_assoc()) {
+                  echo '<div class="col-lg-4 ml-auto">';
+                  echo '<a href="' . $fila['ruta_documento'] . '" target="_blank"><div class="card justify-content-center mb-3"><div class="card-body p-3"><div class="author">';
+                  echo '<img src="../assets/img/draft.svg" alt="team-3" class="avatar avatar-sm shadow me-2 border-radius-lg" loading="lazy">';
+                  echo '<h6 class="my-auto">' . $fila['nombre_certf'] . '</h6>';
+                  echo '</div></div><div class="position-absolute end-0 me-3 "><i class="fas fa-angle-right text-purple" aria-hidden="true"></i></div></div>';
+                  echo '</a>';
+                  echo '</div>';
+                  
+              }
+          } else {
+              echo "No hay certificados para mostrar";
+          }
+
+          // Cerrar conexión
+          $conexion->close();
+          ?>
+          
         </div>
+        
+
       </div>
     </section>
   </div>

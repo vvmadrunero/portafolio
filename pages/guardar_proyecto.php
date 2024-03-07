@@ -8,8 +8,9 @@ if ($conexion->connect_error) {
 }
 
 // Obtener datos del formulario
-$nombre = $_POST['nombre'];
-$descripcion = $_POST['descripcion'];
+$nombre_proyecto = $_POST['nombre_proyecto'];
+$descripcion_proyecto = $_POST['descripcion_proyecto'];
+$enlace_proyecto = $_POST['enlace_proyecto'];
 
 // Manejar la subida de la imagen
 $directorio_destino = 'uploads/'; // Directorio donde se guardarán las imágenes
@@ -18,7 +19,7 @@ $ruta_archivo = $directorio_destino . $nombre_archivo;
 
 if (move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta_archivo)) {
     // Insertar proyecto en la base de datos
-    $sql = "INSERT INTO proyectos (nombre_imagen, ruta_imagen, descripcion) VALUES ('$nombre', '$ruta_archivo', '$descripcion')";
+    $sql = "INSERT INTO proyectos (nombre_proyecto, ruta_imagen, descripcion_proyecto, enlace_proyecto) VALUES ('$nombre_proyecto', '$ruta_archivo', '$descripcion_proyecto', '$enlace_proyecto')";
     if ($conexion->query($sql) === TRUE) {
         echo "Proyecto agregado exitosamente";
     } else {

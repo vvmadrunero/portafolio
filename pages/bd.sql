@@ -7,25 +7,22 @@ USE bd_portafolio;
 
 CREATE TABLE proyectos (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_imagen VARCHAR(255),
+    nombre_proyecto VARCHAR(255),
     ruta_imagen VARCHAR(255),
-    descripcion TEXT,
-    enlace TEXT
+    descripcion_proyecto TEXT,
+    enlace_proyecto TEXT
 );
 
-CREATE TABLE Certificados (
+CREATE TABLE certificados (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_certf VARCHAR(255),
-    ruta_certf VARCHAR(255),
-    descripcion_certf TEXT,
-    enlace_certf TEXT
+    nombre_certf VARCHAR(255) NOT NULL,
+    ruta_documento VARCHAR(255) NOT NULL
 );
-
 
 CREATE TABLE Mas_proyectos (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_proyecto VARCHAR(255),
-    ruta_proyecto VARCHAR(255),
-    descripcion_proyecto TEXT,
-    enlace_proyecto TEXT
+    nombre_otro_proyecto VARCHAR(255),
+    ruta_mas_proyecto VARCHAR(255),
+    descripcion_mas_proyecto TEXT,
+    enlace_mas_proyecto TEXT
 );

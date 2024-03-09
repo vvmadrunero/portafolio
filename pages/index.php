@@ -245,7 +245,7 @@
       $consulta = "SELECT nombre_proyecto, ruta_imagen, descripcion_proyecto, enlace_proyecto FROM proyectos";
       $resultado = $conexion->query($consulta);
 
-      // Mostrar proyectos
+      // Mostrar proyectos 
       if ($resultado->num_rows > 0) {
           while ($fila = $resultado->fetch_assoc()) {
               echo '<div class="col-lg-3 col-sm-6">';
@@ -256,7 +256,7 @@
               echo '<div class="card-body px-0">';
               echo '<h5 class="mt-n3"><a href="javascript:;" class="font-weight-bold text-purple">' . $fila['nombre_proyecto'] . '</a></h5>';
               echo '<p> ' . $fila['descripcion_proyecto'] . ' </p>';
-              echo '<a href="' . $fila['enlace_proyecto'] . '.html" class="text-info text-sm icon-move-right">';
+              echo '<a target="_blank" href="' . $fila['enlace_proyecto'] . '.html" class="text-info text-sm icon-move-right">';
               echo '<br><button type="button" class="btn mb-n5 btn-sm btn-outline-purple text-nowrap mb-0">Ver</button>';
               echo '</a>';
               echo '</div>';

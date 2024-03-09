@@ -30,13 +30,13 @@
             <div class="col-md-6">
                 <h1>Agregar Proyecto</h1>
                 <form action="guardar_proyecto.php" method="POST" enctype="multipart/form-data">
-                    <label for="nombre_proyecto">Nombre de la imagen:</label><br>
+                    <label for="nombre_proyecto">Nombre del proyecto:</label><br>
                     <input type="text" id="nombre_proyecto" name="nombre_proyecto"><br>
-                    <label for="imagen">Imagen:</label><br>
+                    <label for="imagen">Portada:</label><br>
                     <input type="file" id="imagen" name="imagen"><br>
                     <label for="descripcion_proyecto">Descripción:</label><br>
                     <textarea id="descripcion_proyecto" name="descripcion_proyecto"></textarea><br><br>
-                    <label for="enlace">Nombre de la imagen:</label><br>
+                    <label for="enlace"> Ingrese la URL:</label><br>
                     <input type="text" id="enlace_proyecto" name="enlace_proyecto"><br>
                     <input type="submit" value="Agregar Proyecto">
                 </form>
@@ -48,7 +48,7 @@
                     <label for="nombre_certf">Nombre del certificado:</label><br>
                     <input type="text" id="nombre_certf" name="nombre_certf"><br>
 
-                    <label for="certificado">documento:</label><br>
+                    <label for="certificado"> Seleccione el documento:</label><br>
                     <input type="file" id="certificado" name="certificado"><br>
                     
                     <input type="submit" value="Agregar Proyecto">

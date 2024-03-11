@@ -188,7 +188,7 @@
             <div class="row py-5">
               <div class="col-lg-7 col-md-7 z-index-2 position-relative px-md-2 px-sm-5 mx-auto">
                 <div class="d-flex justify-content-between align-items-center mb-2">
-                  <h3 class="mb-0 text-purple">Vanesa madruñero</h3>
+                  <h3 class="mb-0 text-purple">Vanesa Madruñero</h3>
                   <div class="d-block">
                     <button type="button" class="btn btn-sm btn-outline-purple text-nowrap mb-0">Seguir <i class="fas fa-arrow-right text-sm ms-1"></i></button>
                   </div>
@@ -196,24 +196,19 @@
                 <div class="row mb-4">
                   <div class="col-auto">
                     <span class="h6 text-purple">323</span>
-                    <span>Posts</span>
+                    <span>Publicaciones</span>
                   </div>
                   <div class="col-auto">
                     <span class="h6 text-purple">3.5k</span>
-                    <span>Followers</span>
+                    <span>Seguidores</span>
                   </div>
                   <div class="col-auto">
                     <span class="h6 text-purple">260</span>
-                    <span>Following</span>
+                    <span>Siguiendo</span>
                   </div>
                 </div>
                 <p class="text-lg mb-0">
-                  Decisions: If you can’t decide, the answer is no.
-                  If two equally difficult paths, choose the one more
-                  painful in the short term (pain avoidance is creating
-                  an illusion of equality). Choose the path that leaves
-                  you more equanimous. <br><a href="javascript:;" class="text-purple icon-move-right">More about me
-                    <i class="fas fa-arrow-right text-sm ms-1"></i>
+                En este espacio les doy la bienvenida a un lugar donde compartiré mis proyectos, mostraré mi proceso creativo y los guiaré en el desarrollo de sus propios proyectos. A través de este espacio, espero crear una comunidad de aprendizaje donde podamos colaborar, compartir ideas y crecer juntos.
                   </a>
                 </p>
               </div>
@@ -224,11 +219,11 @@
     </section>
     
     <!-- proyectos -->
-    <section class="py-3">
+    <section class="py-3 mt-n6">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <h3 class="mb-5 text-purple">Mis proyectos</h3>
+            <h3 class="mb-5 text-purple">Mis Proyectos</h3>
           </div>
         </div>
         <div class="row">
@@ -248,7 +243,7 @@
       // Mostrar proyectos 
       if ($resultado->num_rows > 0) {
           while ($fila = $resultado->fetch_assoc()) {
-              echo '<div class="col-lg-3 col-sm-6">';
+              echo '<div class="col-lg-4 col-sm-6">';
               echo '<div class="card p-2">';
               echo '<div class="card-header p-0 position-relative">';
               echo '<a class="d-block blur-shadow-image"><img src="' . $fila['ruta_imagen'] . '" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy"></a>';
@@ -257,7 +252,7 @@
               echo '<h5 class="mt-n3"><a href="javascript:;" class="font-weight-bold text-purple">' . $fila['nombre_proyecto'] . '</a></h5>';
               echo '<p> ' . $fila['descripcion_proyecto'] . ' </p>';
               echo '<a target="_blank" href="' . $fila['enlace_proyecto'] . '.html" class="text-info text-sm icon-move-right">';
-              echo '<br><button type="button" class="btn mb-n5 btn-sm btn-outline-purple text-nowrap mb-0">Ver</button>';
+              echo '<button type="button" class="btn mt-n2 btn-sm btn-outline-purple text-nowrap mb-0">Ver</button>';
               echo '</a>';
               echo '</div>';
               echo '</div>';
@@ -281,7 +276,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <h3 class="mb-5 text-purple">Mis certificados</h3>
+            <h3 class="mb-5 text-purple">Mis Certificados</h3>
           </div>
         </div>
 

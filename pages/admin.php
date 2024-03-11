@@ -28,14 +28,14 @@
         <div class="row">
 
             <div class="col-md-6">
-                <h1>Agregar Proyecto</h1>
+                <h2>Agregar Proyecto</h2>
                 <form action="guardar_proyecto.php" method="POST" enctype="multipart/form-data">
                     <label for="nombre_proyecto">Nombre del proyecto:</label><br>
                     <input type="text" id="nombre_proyecto" name="nombre_proyecto"><br>
                     <label for="imagen">Portada:</label><br>
                     <input type="file" id="imagen" name="imagen"><br>
                     <label for="descripcion_proyecto">Descripción:</label><br>
-                    <textarea id="descripcion_proyecto" name="descripcion_proyecto"></textarea><br><br>
+                    <textarea id="descripcion_proyecto" name="descripcion_proyecto"></textarea><br>
                     <label for="enlace"> Ingrese la URL:</label><br>
                     <input type="text" id="enlace_proyecto" name="enlace_proyecto"><br>
                     <input type="submit" value="Agregar Proyecto">
@@ -43,7 +43,7 @@
             </div>
 
             <div class="col-md-6">
-                <h1>Agregar certificado</h1>
+                <h2>Agregar certificado</h2>
                 <form action="guardar_certificado.php" method="POST" enctype="multipart/form-data">
                     <label for="nombre_certf">Nombre del certificado:</label><br>
                     <input type="text" id="nombre_certf" name="nombre_certf"><br>
@@ -54,6 +54,15 @@
                     <input type="submit" value="Agregar Proyecto">
                 </form>
             </div>
+            <hr>
+            <div class="col-md-6">
+                <h2>Eliminar Proyecto</h2>
+                <form action="eliminar_proyecto.php" method="post">
+                    ID del Proyecto a Eliminar: <input type="text" name="id_proyecto_eliminar"><br><br>
+                    <input type="submit" value="Eliminar Proyecto">
+                </form>
+            </div>
+
 
 
         </div>

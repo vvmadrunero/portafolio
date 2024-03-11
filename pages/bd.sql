@@ -2,15 +2,17 @@
 CREATE DATABASE IF NOT EXISTS bd_portafolio;
 
 
-USE bd_portafolio;
+USE bd_portafolio; 
 
 
 CREATE TABLE proyectos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_proyecto INT AUTO_INCREMENT PRIMARY KEY,
     nombre_proyecto VARCHAR(255),
     ruta_imagen VARCHAR(255),
     descripcion_proyecto TEXT,
     enlace_proyecto TEXT
+
+
 );
 
 CREATE TABLE certificados (

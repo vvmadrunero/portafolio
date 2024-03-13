@@ -251,260 +251,59 @@
                                     <thead>
                                         <tr>
                                             <th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7">
-                                                Project</th>
+                                                Nombre del proyecto</th>
                                             <th
                                                 class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Budget</th>
+                                                Descripción</th>
                                             <th
                                                 class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Status</th>
+                                                Enlace</th>
                                             <th
                                                 class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Completion</th>
+                                                Opciones</th>
                                             <th></th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    <div>
-                                                        <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/logos/small-logos/logo-spotify.svg"
-                                                            class="avatar avatar-sm rounded-circle me-2">
-                                                    </div>
-                                                    <div class="my-auto">
-                                                        <h6 class="mb-0 text-xs">Spotify</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p class="text-xs font-weight-bold mb-0">$2,500</p>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-dot me-4">
-                                                    <i class="bg-info"></i>
-                                                    <span class="text-dark text-xs">working</span>
-                                                </span>
-                                            </td>
-                                            <td class="align-middle text-center">
-                                                <div class="d-flex align-items-center">
-                                                    <span class="me-2 text-xs">60%</span>
-                                                    <div>
-                                                        <div class="progress">
-                                                            <div class="progress-bar bg-info" role="progressbar"
-                                                                aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                                                                style="width: 60%;"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle">
-                                                <button class="btn btn-link text-dark mb-0">
-                                                    <i class="fa fa-ellipsis-v text-xs" aria-hidden="true"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    <div>
-                                                        <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/logos/small-logos/logo-invision.svg"
-                                                            class="avatar avatar-sm rounded-circle me-2">
-                                                    </div>
-                                                    <div class="my-auto">
-                                                        <h6 class="mb-0 text-xs">Invision</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p class="text-xs font-weight-bold mb-0">$5,000</p>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-dot me-4">
-                                                    <i class="bg-success"></i>
-                                                    <span class="text-dark text-xs">done</span>
-                                                </span>
-                                            </td>
-                                            <td class="align-middle text-center">
-                                                <div class="d-flex align-items-center">
-                                                    <span class="me-2 text-xs">100%</span>
-                                                    <div>
-                                                        <div class="progress">
-                                                            <div class="progress-bar bg-success" role="progressbar"
-                                                                aria-valuenow="100" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width: 100%;"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle">
-                                                <button class="btn btn-link text-dark mb-0" aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                    <i class="fa fa-ellipsis-v text-xs" aria-hidden="true"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    <div>
-                                                        <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/logos/small-logos/logo-jira.svg"
-                                                            class="avatar avatar-sm rounded-circle me-2">
-                                                    </div>
-                                                    <div class="my-auto">
-                                                        <h6 class="mb-0 text-xs">Jira</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p class="text-xs font-weight-bold mb-0">$3,400</p>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-dot me-4">
-                                                    <i class="bg-danger"></i>
-                                                    <span class="text-dark text-xs">canceled</span>
-                                                </span>
-                                            </td>
-                                            <td class="align-middle text-center">
-                                                <div class="d-flex align-items-center">
-                                                    <span class="me-2 text-xs">30%</span>
-                                                    <div>
-                                                        <div class="progress">
-                                                            <div class="progress-bar bg-danger" role="progressbar"
-                                                                aria-valuenow="30" aria-valuemin="0" aria-valuemax="30"
-                                                                style="width: 30%;"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle">
-                                                <button class="btn btn-link text-dark mb-0" aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                    <i class="fa fa-ellipsis-v text-xs" aria-hidden="true"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    <div>
-                                                        <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/logos/small-logos/logo-slack.svg"
-                                                            class="avatar avatar-sm rounded-circle me-2">
-                                                    </div>
-                                                    <div class="my-auto">
-                                                        <h6 class="mb-0 text-xs">Slack</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p class="text-xs font-weight-bold mb-0">$1,000</p>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-dot me-4">
-                                                    <i class="bg-danger"></i>
-                                                    <span class="text-dark text-xs">canceled</span>
-                                                </span>
-                                            </td>
-                                            <td class="align-middle text-center">
-                                                <div class="d-flex align-items-center">
-                                                    <span class="me-2 text-xs">0%</span>
-                                                    <div>
-                                                        <div class="progress">
-                                                            <div class="progress-bar bg-success" role="progressbar"
-                                                                aria-valuenow="0" aria-valuemin="0" aria-valuemax="0"
-                                                                style="width: 0%;"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle">
-                                                <button class="btn btn-link text-dark mb-0" aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                    <i class="fa fa-ellipsis-v text-xs" aria-hidden="true"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    <div>
-                                                        <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/logos/small-logos/logo-webdev.svg"
-                                                            class="avatar avatar-sm rounded-circle me-2">
-                                                    </div>
-                                                    <div class="my-auto">
-                                                        <h6 class="mb-0 text-xs">Webdev</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p class="text-xs font-weight-bold mb-0">$14,000</p>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-dot me-4">
-                                                    <i class="bg-info"></i>
-                                                    <span class="text-dark text-xs">working</span>
-                                                </span>
-                                            </td>
-                                            <td class="align-middle text-center">
-                                                <div class="d-flex align-items-center">
-                                                    <span class="me-2 text-xs">80%</span>
-                                                    <div>
-                                                        <div class="progress">
-                                                            <div class="progress-bar bg-info" role="progressbar"
-                                                                aria-valuenow="80" aria-valuemin="0" aria-valuemax="80"
-                                                                style="width: 80%;"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle">
-                                                <button class="btn btn-link text-dark mb-0" aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                    <i class="fa fa-ellipsis-v text-xs" aria-hidden="true"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex px-2">
-                                                    <div>
-                                                        <img src="https://demos.creative-tim.com/soft-ui-design-system-pro/assets/img/logos/small-logos/logo-xd.svg"
-                                                            class="avatar avatar-sm rounded-circle me-2">
-                                                    </div>
-                                                    <div class="my-auto">
-                                                        <h6 class="mb-0 text-xs">Adobe XD</h6>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <p class="text-xs font-weight-bold mb-0">$2,300</p>
-                                            </td>
-                                            <td>
-                                                <span class="badge badge-dot me-4">
-                                                    <i class="bg-success"></i>
-                                                    <span class="text-dark text-xs">done</span>
-                                                </span>
-                                            </td>
-                                            <td class="align-middle text-center">
-                                                <div class="d-flex align-items-center">
-                                                    <span class="me-2 text-xs">100%</span>
-                                                    <div>
-                                                        <div class="progress">
-                                                            <div class="progress-bar bg-success" role="progressbar"
-                                                                aria-valuenow="100" aria-valuemin="0"
-                                                                aria-valuemax="100" style="width: 100%;"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="align-middle">
-                                                <button class="btn btn-link text-dark mb-0" aria-haspopup="true"
-                                                    aria-expanded="false">
-                                                    <i class="fa fa-ellipsis-v text-xs" aria-hidden="true"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                    <?php
+                                        // Conexión a la base de datos
+                                        $conexion = new mysqli("localhost", "root", "", "bd_portafolio");
+
+                                        // Verificar la conexión
+                                        if ($conexion->connect_error) {
+                                            die("Error de conexión: " . $conexion->connect_error);
+                                        }
+
+                                        // Consultar proyectos
+                                        $consulta = "SELECT nombre_proyecto, ruta_imagen, descripcion_proyecto, enlace_proyecto FROM proyectos";
+                                        $resultado = $conexion->query($consulta);
+
+                                        // Mostrar proyectos 
+                                        if ($resultado->num_rows > 0) {
+                                            while ($fila = $resultado->fetch_assoc()) {
+                                                echo '<tbody><tr>';
+                                                echo '<td><div class="d-flex px-2"><div>';
+                                                echo '<img src="' . $fila['ruta_imagen'] . '"
+                                                class="avatar-sm  me-4"></div>';
+                                                echo '<div class="my-auto"><h6 class="mb-0 text-xs">' . $fila['nombre_proyecto'] . '</h6></div>';
+                                                echo '</div></td>';
+                                                echo '<td><p class="text-xs font-weight-bold mb-0">' . $fila['descripcion_proyecto'] . '</p></td>';
+                                                echo '<td>';
+                                                echo '<a target="_blank" href="' . $fila['enlace_proyecto'] . '.html" class="text-info text-sm icon-move-right">';
+                                                echo '<button type="button" class="btn mt-n2 btn-sm btn-outline-purple text-nowrap mb-0">Ver</button>';
+                                                echo '</a>';
+                                                echo '</td>';
+                                                echo '<td class="align-middle"><button class="btn btn-link text-dark mb-0">';
+                                                echo '<i class="fa fa-ellipsis-v text-xs" aria-hidden="true"></i>';
+                                                echo '</button></td>';
+                                                echo '</tr></tbody>';
+                                            }
+                                        } else {
+                                            echo "No hay proyectos para mostrar";
+                                        }
+
+                                        // Cerrar conexión
+                                        $conexion->close();
+                                    ?>
                                 </table>
                             </div>
                         </div>

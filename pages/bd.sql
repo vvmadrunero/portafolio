@@ -12,7 +12,6 @@ CREATE TABLE proyectos (
     descripcion_proyecto TEXT,
     enlace_proyecto TEXT
 
-
 );
 
 CREATE TABLE certificados (

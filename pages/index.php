@@ -246,7 +246,7 @@
               echo '<div class="col-lg-4 col-sm-6">';
               echo '<div class="card p-2">';
               echo '<div class="card-header p-0 position-relative">';
-              echo '<a class="d-block blur-shadow-image"><img src="' . $fila['ruta_imagen'] . '" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy"></a>';
+              echo '<a class="d-block blur-shadow-image"><img src="' . $fila['ruta_imagen'] . '" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" style="height:500px; width:100%" loading="lazy"></a>';
               echo '</div>';
               echo '<div class="card-body px-0">';
               echo '<h5 class="mt-n3"><a href="javascript:;" class="font-weight-bold text-purple">' . $fila['nombre_proyecto'] . '</a></h5>';

@@ -4,6 +4,10 @@ CREATE DATABASE IF NOT EXISTS bd_portafolio;
 
 USE bd_portafolio; 
 
+CREATE TABLE security_codes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    default_code VARCHAR(6) NOT NULL
+);
 
 CREATE TABLE proyectos (
     id_proyecto INT AUTO_INCREMENT PRIMARY KEY,
@@ -20,10 +24,4 @@ CREATE TABLE certificados (
     ruta_documento VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE Mas_proyectos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_otro_proyecto VARCHAR(255),
-    ruta_mas_proyecto VARCHAR(255),
-    descripcion_mas_proyecto TEXT,
-    enlace_mas_proyecto TEXT
-);
+

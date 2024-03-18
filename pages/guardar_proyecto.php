@@ -23,7 +23,6 @@ if (move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta_archivo)) {
     if ($conexion->query($sql) === TRUE) {
         // Redirigir a la misma página
         echo '<script>window.location = "'.$_SERVER['HTTP_REFERER'].'";</script>';
-        echo '<script>alert("Proyecto agregado exitosamente");</script>';
         exit();
 
     } else {

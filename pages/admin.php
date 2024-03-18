@@ -89,7 +89,7 @@
                                         </h4>
                                     </div>
                                     <div class="col-auto">
-                                        <a onclick="agg_proyecto()" class="btn btn-outline-primary btn-xs mb-0">Agregar</a>
+                                        <a onclick="agg_proyecto()" class="btn bg-purple text-white btn-xs mb-0">Agregar</a>
                                     </div>
                                 </div>
                             </li>
@@ -161,24 +161,24 @@
                                         // Mostrar proyectos 
                                         if ($resultado->num_rows > 0) {
                                             while ($fila = $resultado->fetch_assoc()) {
-                                                echo '<tbody><tr>';
-                                                echo '<td><h6 class="mb-0 text-xs">' . $fila['id_proyecto'] . '</h6></td>';
-                                                echo '<td><div class="d-flex px-2"><div>';
-                                                echo '<img src="' . $fila['ruta_imagen'] . '"
-                                                class="avatar-sm  me-4"></div>';
-                                                echo '<div class="my-auto"><h6 class="mb-0 text-xs">' . $fila['nombre_proyecto'] . '</h6></div>';
-                                                echo '</div></td>';
-                                                echo '<td><p class="text-xs font-weight-bold mb-0">' . $fila['descripcion_proyecto'] . '</p></td>';
-                                                echo '<td>';
-                                                echo '<a target="_blank" href="' . $fila['enlace_proyecto'] . '.html" class="text-info text-sm icon-move-right">';
-                                                echo '<button type="button" class="btn mt-n2 btn-sm btn-outline-purple text-nowrap mb-0">Ver</button>';
-                                                echo '</a>';
-                                                echo '</td>';
-                                                // quede aqui 
-                                                echo '<td class="align-middle">';
-                                                echo '<a href="' . $fila['enlace_proyecto'] . '.html"><span class="material-symbols-outlined opacity-6 me-1 text-xl text-danger">delete</span></a>';
-                                                echo '</td>';
-                                                echo '</tr></tbody>';
+                                                echo '<tbody><tr> 
+                                                 <td><h6 class="mb-0 text-xs">' . $fila['id_proyecto'] . '</h6></td> 
+                                                 <td><div class="d-flex px-2"><div> 
+                                                 <img src="' . $fila['ruta_imagen'] . '"
+                                                class="avatar-sm  me-4"></div> 
+                                                 <div class="my-auto"><h6 class="mb-0 text-xs">' . $fila['nombre_proyecto'] . '</h6></div> 
+                                                 </div></td> 
+                                                 <td><p class="text-xs font-weight-bold mb-0">' . $fila['descripcion_proyecto'] . '</p></td> 
+                                                 <td> 
+                                                 <a target="_blank" href="' . $fila['enlace_proyecto'] . '.html" class="text-info text-sm icon-move-right"> 
+                                                 <button type="button" class="btn mt-n2 btn-sm btn-outline-purple text-nowrap mb-0">ir</button> 
+                                                 </a> 
+                                                 </td>
+                                                 <td class="align-middle"> 
+                                                 <a class="table__item__link" href="eliminar_proyecto.php?id=' . $fila['id_proyecto'] . '"><span class="material-symbols-outlined opacity-6 me-1 text-xl text-danger">delete</span></a>
+                                                <a href="editar_proyecto.php?id=' . $fila['id_proyecto'] . '"><span class="material-symbols-outlined opacity-6 me-1 text-xl text-purple">edit</span></a> 
+                                                 </td> 
+                                                 </tr></tbody>';
                                             }
                                         } else {
                                             echo "No hay proyectos para mostrar";
@@ -271,21 +271,21 @@
                                         // Mostrar certificados
                                         if ($resultado->num_rows > 0) {
                                             while ($fila = $resultado->fetch_assoc()) {
-                                                echo '<tbody><tr>';
-                                                echo '<td><h6 class="mb-0 text-xs">' . $fila['id'] . '</h6></td>';
-                                                echo '<td><div class="d-flex px-2"><div>';
-                                                echo '<img src="../assets/img/draft.svg" alt="team-3" class="avatar avatar-sm shadow me-2 border-radius-lg" loading="lazy"></div>';
-                                                echo '<div class="my-auto"><h6 class="mb-0 text-xs">' . $fila['nombre_certf'] . '</h6></div>';
-                                                echo '</div></td>';
-                                                echo '<td>';
-                                                echo '<a target="_blank" href="' . $fila['ruta_documento'] . '.html" class="text-info text-sm icon-move-right">';
-                                                echo '<button type="button" class="btn mt-n2 btn-sm btn-outline-purple text-nowrap mb-0">Descargar</button>';
-                                                echo '</a>';
-                                                echo '</td>';
-                                                echo '<td class="align-middle"><button class="btn btn-link text-dark mb-0">';
-                                                echo '<span class="material-symbols-outlined opacity-6 me-1 text-xl">delete</span>';
-                                                echo '</button></td>';
-                                                echo '</tr></tbody>';
+                                                echo '<tbody><tr>
+                                                 <td><h6 class="mb-0 text-xs">' . $fila['id'] . '</h6></td>
+                                                 <td><div class="d-flex px-2"><div>
+                                                 <img src="../assets/img/draft.svg" alt="team-3" class="avatar avatar-sm shadow me-2 border-radius-lg" loading="lazy"></div>
+                                                 <div class="my-auto"><h6 class="mb-0 text-xs">' . $fila['nombre_certf'] . '</h6></div>
+                                                 </div></td>
+                                                 <td>
+                                                 <a target="_blank" href="' . $fila['ruta_documento'] . '.html" class="text-info text-sm icon-move-right">
+                                                 <button type="button" class="btn mt-n2 btn-sm btn-outline-purple text-nowrap mb-0">Descargar</button>
+                                                 </a>
+                                                 </td>
+                                                 <td class="align-middle"><button class="btn btn-link text-dark mb-0">
+                                                 <span class="material-symbols-outlined opacity-6 me-1 text-xl">delete</span>
+                                                 </button></td>
+                                                 </tr></tbody>';
                                                 
                                             }
                                         } else {
@@ -307,14 +307,15 @@
         </div>
     </main>
 
-    <script src="../../assets/js/core/popper.min.js"></script>
-    <script src="../../assets/js/core/bootstrap.min.js"></script>
-    <script src="../../assets/js/plugins/perfect-scrollbar.min.js"></script>
-    <script src="../../assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
 
-    <script src="../../assets/js/plugins/dragula/dragula.min.js"></script>
-    <script src="../../assets/js/plugins/jkanban/jkanban.js"></script>
-    <script src="../../assets/js/plugins/chartjs.min.js"></script>
+    <script src="../assets/js/plugins/dragula/dragula.min.js"></script>
+    <script src="../assets/js/plugins/jkanban/jkanban.js"></script>
+    <script src="../assets/js/plugins/chartjs.min.js"></script>
+    <script src="confirmacion.js"></script>
     <script>
         var ctx1 = document.getElementById("chart-line").getContext("2d");
 
@@ -410,7 +411,7 @@
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
 
-    <script src="../../assets/js/argon-dashboard.min.js?v=2.0.5"></script>
+    <script src="../assets/js/argon-dashboard.min.js?v=2.0.5"></script>
     <script defer
         src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
         integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="

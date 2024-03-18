@@ -8,13 +8,13 @@ if ($conexion->connect_error) {
 }
 
 // Obtener el ID del proyecto a eliminar
-$id_eliminar = $_POST['id_proyecto_eliminar'];
+$id_eliminar = $_GET['id'];
 
 // Eliminar el proyecto de la base de datos
 $sql = "DELETE FROM proyectos WHERE id_proyecto = $id_eliminar";
 
 if ($conexion->query($sql) === TRUE) {
-    echo "Proyecto eliminado exitosamente";
+    echo '<script>window.location = "'.$_SERVER['HTTP_REFERER'].'";</script>';
 } else {
     echo "Error al eliminar el proyecto: " . $conexion->error;
 }

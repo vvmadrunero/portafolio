@@ -19,7 +19,7 @@ if (move_uploaded_file($_FILES['certificado']['tmp_name'], $ruta_archivo)) {
     // Insertar certificado en la base de datos
     $sql = "INSERT INTO certificados (nombre_certf, ruta_documento) VALUES ('$nombre_certf', '$ruta_archivo')";
     if ($conexion->query($sql) === TRUE) {
-        echo "Certificado agregado exitosamente";
+        echo '<script>window.location = "'.$_SERVER['HTTP_REFERER'].'";</script>';
     } else {
         echo "Error al agregar el certificado: " . $conexion->error;
     }

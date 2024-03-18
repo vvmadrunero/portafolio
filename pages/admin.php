@@ -174,9 +174,10 @@
                                                 echo '<button type="button" class="btn mt-n2 btn-sm btn-outline-purple text-nowrap mb-0">Ver</button>';
                                                 echo '</a>';
                                                 echo '</td>';
-                                                echo '<td class="align-middle"><button class="btn btn-link text-dark mb-0">';
-                                                echo '<i class="fa fa-ellipsis-v text-xs" aria-hidden="true"></i>';
-                                                echo '</button></td>';
+                                                // quede aqui 
+                                                echo '<td class="align-middle">';
+                                                echo '<a href="' . $fila['enlace_proyecto'] . '.html"><span class="material-symbols-outlined opacity-6 me-1 text-xl text-danger">delete</span></a>';
+                                                echo '</td>';
                                                 echo '</tr></tbody>';
                                             }
                                         } else {
@@ -193,6 +194,7 @@
                    
                    
                 </div>
+                
                 <div class="col-12 col-lg-5">
                     <div class="card">
                         <div class="card-body">
@@ -281,7 +283,7 @@
                                                 echo '</a>';
                                                 echo '</td>';
                                                 echo '<td class="align-middle"><button class="btn btn-link text-dark mb-0">';
-                                                echo '<i class="fa fa-ellipsis-v text-xs" aria-hidden="true"></i>';
+                                                echo '<span class="material-symbols-outlined opacity-6 me-1 text-xl">delete</span>';
                                                 echo '</button></td>';
                                                 echo '</tr></tbody>';
                                                 

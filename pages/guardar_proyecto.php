@@ -21,7 +21,11 @@ if (move_uploaded_file($_FILES['imagen']['tmp_name'], $ruta_archivo)) {
     // Insertar proyecto en la base de datos
     $sql = "INSERT INTO proyectos (nombre_proyecto, ruta_imagen, descripcion_proyecto, enlace_proyecto) VALUES ('$nombre_proyecto', '$ruta_archivo', '$descripcion_proyecto', '$enlace_proyecto')";
     if ($conexion->query($sql) === TRUE) {
-        echo "Proyecto agregado exitosamente";
+        // Redirigir a la misma página
+        echo '<script>window.location = "'.$_SERVER['HTTP_REFERER'].'";</script>';
+        echo '<script>alert("Proyecto agregado exitosamente");</script>';
+        exit();
+
     } else {
         echo "Error al agregar el proyecto: " . $conexion->error;
     }

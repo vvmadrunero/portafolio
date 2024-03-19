@@ -1,15 +1,4 @@
-<!--
-=========================================================
-* Material Kit 2 - v3.0.4
-=========================================================
 
-* Product Page:  https://www.creative-tim.com/product/material-kit 
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
 
@@ -36,13 +25,13 @@
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
 
 
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="min-height-300 bg-purple position-absolute w-100"></div>
     
@@ -50,7 +39,7 @@
 
     <!-- Navbar Transparent -->
     <?php
-        include 'nav.php';
+        include 'nav2.php';
     ?>
     <!-- End Navbar -->
 
@@ -170,7 +159,7 @@
                                                  </div></td> 
                                                  <td><p class="text-xs font-weight-bold mb-0">' . $fila['descripcion_proyecto'] . '</p></td> 
                                                  <td> 
-                                                 <a target="_blank" href="' . $fila['enlace_proyecto'] . '.html" class="text-info text-sm icon-move-right"> 
+                                                 <a target="_blank" href="' . $fila['enlace_proyecto'] . '" class="text-info text-sm icon-move-right"> 
                                                  <button type="button" class="btn mt-n2 btn-sm btn-outline-purple text-nowrap mb-0">ir</button> 
                                                  </a> 
                                                  </td>
@@ -278,7 +267,7 @@
                                                  <div class="my-auto"><h6 class="mb-0 text-xs">' . $fila['nombre_certf'] . '</h6></div>
                                                  </div></td>
                                                  <td>
-                                                 <a target="_blank" href="' . $fila['ruta_documento'] . '.html" class="text-info text-sm icon-move-right">
+                                                 <a target="_blank" href="' . $fila['ruta_documento'] . '" class="text-info text-sm icon-move-right">
                                                  <button type="button" class="btn mt-n2 btn-sm btn-outline-purple text-nowrap mb-0">Descargar</button>
                                                  </a>
                                                  </td>

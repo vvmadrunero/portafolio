@@ -11,7 +11,7 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
     $id = $_GET["id"];
 
     // Consulta SQL para obtener los datos del proyecto a editar
-    $sql = "SELECT id_proyecto, nombre_proyecto, ruta_imagen, descripcion_proyecto, enlace_proyecto FROM proyectos WHERE id_proyecto=$id";
+    $sql = "SELECT id, nombre_usuario, contrasena FROM usuarios WHERE id=$id";
     $result = $conn->query($sql);
 
     if ($result->num_rows == 1) {
@@ -58,7 +58,7 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
 
     <!-- Navbar Transparent -->
     <?php
-        include 'nav.php';
+        include 'nav2.php';
     ?>
     <!-- End Navbar -->
 
@@ -85,62 +85,35 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
                 }
             </style>
             
-            <div class="row mt-4 justify-content-center ">
-                <div class="col-12 d-right col-lg-3 mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="col-md-12">
-                                            
-                                <div class="text-center">
-                                    <h4 class="mb-0">Portada</h4>
-                                    <img src="<?php echo $row['ruta_imagen']; ?>" class="" style="width: 260px !important; height: 260px !important;">
-                                </div>      
-                                            
-                            </div>
-                        </div>
-                            
-                    </div>
-                </div>
+            <div class="row mt-7 justify-content-center ">
+                
                 <div class="col-12 col-lg-6">
+                    
                     <div class="card">
+                    <div class="mt-n5 mt-md-n5 text-center">
+                        <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="../assets/img/perfil/perfil3.jpeg" alt="vanesa" loading="lazy">
+                    </div>
                         <div class="card-body">
-                            
-                            <li class="list-group-item px-0">
-                                <div class="row align-items-center">
-                                    
-                                    <div class="col ml-2">
-                                        <h4 class="mb-0">
-                                        Editar proyecto con <span class="bg-purple text-white p-1 border-radius-xl"> id <?php echo $row['id_proyecto']; ?></span>
-                                        </h4>
-                                    </div>
-                                    
+                            <form action="procesar_login.php" method="POST" class="text-start">
+                                <div class="input-group input-group-outline my-3">
+                                <label for="nombre_usuario" class="form-label">Correo</label>
+                                <input type="text" id="nombre_usuario" value="<?php echo $row['nombre_usuario']; ?>" name="nombre_usuario" class="form-control" required>
                                 </div>
-                            </li>
-                            <div class="col-md-12">
-                                <form action="edit_proyecto.php" method="POST" enctype="multipart/form-data">
-                                    <input type="hidden" name="id" value="<?php echo $row['id_proyecto']; ?>">
-                                    
-                                    <div class="input-group input-group-static mb-2">
-                                        <label for="name">Nombre del Proyecto:</label>
-                                        <input type="text" id="name" name="name" class="form-control" value="<?php echo $row['nombre_proyecto']; ?>">
-                                    </div>
-                                    <div class=" mb-2">
-                                        <label for="image" class="form-label">Seleccionar imagen:</label>
-                                        <input type="file" id="image" class="form-control custom-file-input" name="image">
-                                    </div>
+                                <div class="input-group input-group-outline mb-4">
+                                <label class="form-label">Contraseña</label>
+                                <input type="text" id="contrasena" value="<?php echo $row['contrasena']; ?>" name="contrasena" class="form-control" required>
+                                </div>
+                                <div class="text-center mb-n4">
+                                    <?php
+                                    // Verificar si hay un mensaje de error y mostrarlo si es necesario
+                                    if (isset($_GET['error'])) {
+                                        $error = $_GET['error'];
+                                        echo "<p style='color: red;'>$error</p>";
+                                    }
+                                    ?>
+                                </div>
+                            </form>
 
-                                    <div class="input-group input-group-static mb-2">
-                                        <label for="description">Descripción del Proyecto:</label><br>
-                                        <textarea id="description" name="description" class="form-control" rows="4" cols="50"><?php echo $row['descripcion_proyecto']; ?></textarea>
-                                    </div>
-
-                                    <div class="input-group input-group-static mb-4">
-                                        <label for="link">Enlace del Proyecto:</label>
-                                        <input type="text" id="link" name="link" class="form-control" value="<?php echo $row['enlace_proyecto']; ?>">
-                                    </div>
-                                    <input type="submit"  class="btn bg-purple text-white mb-0" value="Actualizar datos">
-                                </form>
-                            </div>
                         </div>
                     </div>
                    

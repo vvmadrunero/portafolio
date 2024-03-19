@@ -41,131 +41,9 @@
 <body class="blog-author bg-gray-200">
 
   <!-- Navbar Transparent -->
-  <div class="container position-sticky z-index-sticky top-0">
-    <div class="row">
-      <div class="col-12">
-        <nav class="navbar navbar-expand-lg  blur border-radius-xl top-0 z-index-fixed shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
-          <div class="container-fluid px-0">
-            <a class="navbar-brand font-weight-bolder ms-sm-3" href="index.html"
-              rel="tooltip" title="Designed and Coded by Creative Tim" data-placement="bottom" target="_blank">
-              Portafolio
-            </a>
-            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon mt-2">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-              </span>
-            </button>
-            <div class="collapse navbar-collapse pt-3 pb-2 py-lg-0 w-100" id="navigation">
-              <ul class="navbar-nav navbar-nav-hover ms-auto">
-
-                <li class="nav-item ms-lg-auto">
-                  <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="material-icons opacity-6 me-1 mt-n1 text-xl">home</i>
-                    Inicio
-                  </a>
-                </li>
-
-                <li class="nav-item dropdown dropdown-hover mx-2">
-                  <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="material-icons opacity-6 me-2 text-md">dashboard</i>
-                    Pages
-                    <img src="../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-animation ms-n3 dropdown-md p-3 border-radius-xl mt-0 mt-lg-3"
-                    aria-labelledby="dropdownMenuPages">
-                    <div class="d-none d-lg-block">
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
-                        Landing Pages
-                      </h6>
-                      <a href="./pages/about-us.html" class="dropdown-item border-radius-md">
-                        <span>About Us</span>
-                      </a>
-                      <a href="./pages/contact-us.html" class="dropdown-item border-radius-md">
-                        <span>Contact Us</span>
-                      </a>
-                      <a href="./pages/author.html" class="dropdown-item border-radius-md">
-                        <span>Author</span>
-                      </a>
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
-                        Account
-                      </h6>
-                      <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
-                        <span>Sign In</span>
-                      </a>
-                    </div>
-
-                    <div class="d-lg-none">
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1">
-                        Landing Pages
-                      </h6>
-
-                      <a href="./pages/about-us.html" class="dropdown-item border-radius-md">
-                        <span>About Us</span>
-                      </a>
-                      <a href="./pages/contact-us.html" class="dropdown-item border-radius-md">
-                        <span>Contact Us</span>
-                      </a>
-                      <a href="./pages/author.html" class="dropdown-item border-radius-md">
-                        <span>Author</span>
-                      </a>
-
-                      <h6 class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1 mt-3">
-                        Account
-                      </h6>
-                      <a href="./pages/sign-in.html" class="dropdown-item border-radius-md">
-                        <span>Sign In</span>
-                      </a>
-
-                    </div>
-
-                  </div>
-                </li>
-
-                <li class="nav-item dropdown dropdown-hover mx-2">
-                  <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" id="dropdownMenuPages"
-                    data-bs-toggle="dropdown" aria-expanded="false">
-                    <i class="fas fa-user opacity-6 me-2 text-xl"></i>
-                    Admin
-                    <img src="../assets/img/down-arrow-dark.svg" alt="down-arrow" class="arrow ms-auto ms-md-2">
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-animation ms-n3 dropdown-md p-3 border-radius-xl mt-0 mt-lg-3"
-                    aria-labelledby="dropdownMenuPages">
-                    <div class="d-none d-lg-block">
-                      <a href="admin.php" class="dropdown-item border-radius-md">
-                        <span>Administrar</span>
-                      </a>
-                    </div>
-
-                    <div class="d-lg-none">
-                      <a href="admin.php" class="dropdown-item border-radius-md">
-                        <span>Administrar</span>
-                      </a>
-
-                    </div>
-
-                  </div>
-                </li>
-
-                <!-- <li class="nav-item my-auto ms-3 ms-lg-0">
-
-                  <a href="https://www.creative-tim.com/product/material-kit-pro"
-                    class="btn btn-sm  bg-gradient-primary  mb-0 me-1 mt-2 mt-md-0">redes</a>
-
-                </li> -->
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <!-- End Navbar -->
-      </div>
-    </div>
-  </div>
+  <?php
+    include 'nav.php';
+  ?>
   <!-- End Navbar -->
 
   
@@ -251,7 +129,7 @@
               echo '<div class="col-lg-3 col-sm-6">';
               echo '<div class="card p-2">';
               echo '<div class="card-header p-0 position-relative">';
-              echo '<a class="d-block blur-shadow-image"><img style="width: 100%;height: 200px;" src="' . $fila['ruta_imagen'] . '" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy"></a>';
+              echo '<a class="d-block blur-shadow-image"><img style="width: 100%;height: 280px;" src="' . $fila['ruta_imagen'] . '" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy"></a>';
               echo '</div>';
               echo '<div class="card-body px-0">';
               echo '<h5 class="mt-n3"><a href="javascript:;" class="font-weight-bold text-purple">' . $fila['nombre_proyecto'] . '</a></h5>';
@@ -420,59 +298,9 @@
     </div>
   </section>
   <!-- -------- START FOOTER 5 w/ DARK BACKGROUND ------- -->
-  <footer class="footer py-5">
-    <div class="container z-index-1 position-relative">
-      <div class="row">
-        <div class="col-lg-4 me-auto mb-lg-0 mb-4 text-lg-start text-center">
-          <h6 class="text-dark font-weight-bolder text-uppercase mb-lg-4 mb-3">Material Design</h6>
-          <ul class="nav flex-row ms-n3 justify-content-lg-start justify-content-center mb-4 mt-sm-0">
-            <li class="nav-item">
-              <a class="nav-link text-dark opacity-8" href="https://www.creative-tim.com" target="_blank">
-                Home
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark opacity-8" href="https://www.creative-tim.com/presentation" target="_blank">
-                About
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark opacity-8" href="https://www.creative-tim.com/blog" target="_blank">
-                Blog
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark opacity-8" href="https://www.creative-tim.com" target="_blank">
-                Services
-              </a>
-            </li>
-          </ul>
-          <p class="text-sm text-dark opacity-8 mb-0">
-            Copyright © <script>
-              document.write(new Date().getFullYear())
-            </script> Material Design by Creative Tim.
-          </p>
-        </div>
-        <div class="col-lg-6 ms-auto text-lg-end text-center">
-          <p class="mb-5 text-lg text-dark font-weight-bold">
-            The reward for getting on the stage is fame. The price of fame is you can’t get off the stage.
-          </p>
-          <a href="javascript:;" target="_blank" class="text-dark me-xl-4 me-4 opacity-5">
-            <span class="fab fa-dribbble"></span>
-          </a>
-          <a href="javascript:;" target="_blank" class="text-dark me-xl-4 me-4 opacity-5">
-            <span class="fab fa-twitter"></span>
-          </a>
-          <a href="javascript:;" target="_blank" class="text-dark me-xl-4 me-4 opacity-5">
-            <span class="fab fa-pinterest"></span>
-          </a>
-          <a href="javascript:;" target="_blank" class="text-dark opacity-5">
-            <span class="fab fa-github"></span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <?php
+    include 'footer.php';
+  ?>
   <!-- -------- END FOOTER 5 w/ DARK BACKGROUND ------- -->
   <!--   Core JS Files   -->
   <script src="../assets/js/core/popper.min.js" type="text/javascript"></script>

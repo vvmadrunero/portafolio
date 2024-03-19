@@ -256,8 +256,8 @@
               echo '<div class="card-body px-0">';
               echo '<h5 class="mt-n3"><a href="javascript:;" class="font-weight-bold text-purple">' . $fila['nombre_proyecto'] . '</a></h5>';
               echo '<p> ' . $fila['descripcion_proyecto'] . ' </p>';
-              echo '<a href="' . $fila['enlace_proyecto'] . '.html" class="text-info text-sm icon-move-right">';
-              echo '<br><button type="button" class="btn mb-n5 btn-sm btn-outline-purple text-nowrap mb-0">Ver</button>';
+              echo '<a href="' . $fila['enlace_proyecto'] . '" class="text-info text-sm icon-move-right">';
+              echo '<br><button type="button" class="btn mb-n3 btn-sm btn-outline-purple">Ver</button>';
               echo '</a>';
               echo '</div>';
               echo '</div>';

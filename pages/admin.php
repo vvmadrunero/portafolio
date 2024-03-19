@@ -89,7 +89,7 @@
                                         </h4>
                                     </div>
                                     <div class="col-auto">
-                                        <a onclick="agg_proyecto()" class="btn bg-purple text-white btn-xs mb-0">Agregar</a>
+                                        <a onclick="agg_proyecto()" class="btn btn-outline-purple btn-xs mb-0">Agregar</a>
                                     </div>
                                 </div>
                             </li>
@@ -176,7 +176,7 @@
                                                  </td>
                                                  <td class="align-middle"> 
                                                  <a class="table__item__link" href="eliminar_proyecto.php?id=' . $fila['id_proyecto'] . '"><span class="material-symbols-outlined opacity-6 me-1 text-xl text-danger">delete</span></a>
-                                                <a href="editar_proyecto.php?id=' . $fila['id_proyecto'] . '"><span class="material-symbols-outlined opacity-6 me-1 text-xl text-purple">edit</span></a> 
+                                                <a href="form_edit_proyecto.php?id=' . $fila['id_proyecto'] . '"><span class="material-symbols-outlined opacity-6 me-1 text-xl text-purple">edit</span></a> 
                                                  </td> 
                                                  </tr></tbody>';
                                             }

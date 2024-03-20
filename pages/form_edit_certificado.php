@@ -11,7 +11,7 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
     $id = $_GET["id"];
 
     // Consulta SQL para obtener los datos del proyecto a editar
-    $sql = "SELECT id, nombre_usuario, contrasena FROM usuarios WHERE id=$id";
+    $sql = "SELECT id, nombre_certf, ruta_documento FROM certificados WHERE id=$id";
     $result = $conn->query($sql);
 
     if ($result->num_rows == 1) {
@@ -58,7 +58,7 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
 
     <!-- Navbar Transparent -->
     <?php
-        include 'nav2.php';
+        include 'nav.php';
     ?>
     <!-- End Navbar -->
 
@@ -85,35 +85,37 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
                 }
             </style>
             
-            <div class="row mt-7 justify-content-center ">
-                
+            <div class="row mt-4 justify-content-center ">
                 <div class="col-12 col-lg-6">
-                    
                     <div class="card">
-                    <div class="mt-n5 mt-md-n5 text-center">
-                        <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="../assets/img/perfil/perfil3.jpeg" alt="vanesa" loading="lazy">
-                    </div>
                         <div class="card-body">
-                            <form action="procesar_login.php" method="POST" class="text-start">
-                                <div class="input-group input-group-static my-3">
-                                <label for="nombre_usuario">Correo</label>
-                                <input type="text" id="nombre_usuario" value="<?php echo $row['nombre_usuario']; ?>" name="nombre_usuario" class="form-control" required>
+                            
+                            <li class="list-group-item px-0">
+                                <div class="row align-items-center">
+                                    
+                                    <div class="col ml-2">
+                                        <h4 class="mb-0">
+                                        Editar certificado con <span class="bg-purple text-white p-1 border-radius-xl"> id <?php echo $row['id']; ?></span>
+                                        </h4>
+                                    </div>
+                                    
                                 </div>
-                                <div class="input-group input-group-static mb-4">
-                                <label>Contraseña</label>
-                                <input type="text" id="contrasena" value="<?php echo $row['contrasena']; ?>" name="contrasena" class="form-control" required>
-                                </div>
-                                <div class="text-center mb-n4">
-                                    <?php
-                                    // Verificar si hay un mensaje de error y mostrarlo si es necesario
-                                    if (isset($_GET['error'])) {
-                                        $error = $_GET['error'];
-                                        echo "<p style='color: red;'>$error</p>";
-                                    }
-                                    ?>
-                                </div>
-                            </form>
-
+                            </li>
+                            <div class="col-md-12">
+                                <form action="edit_certf.php" method="POST" enctype="multipart/form-data">
+                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                    
+                                    <div class="input-group input-group-static mb-2">
+                                        <label for="name">Nombre del documento:</label>
+                                        <input type="text" id="name" name="name" class="form-control" value="<?php echo $row['nombre_certf']; ?>">
+                                    </div>
+                                    <div class=" mb-2">
+                                        <label for="certificado"> Seleccione el documento:</label><br>
+                                        <input type="file" id="certificado" class="form-control custom-file-input" name="certificado">
+                                    </div>
+                                    <input type="submit"  class="btn bg-purple text-white mb-0" value="Actualizar datos">
+                                </form>
+                            </div>
                         </div>
                     </div>
                    

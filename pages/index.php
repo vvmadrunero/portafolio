@@ -48,7 +48,7 @@
 
   
   <!-- -------- START HEADER 4 w/ search book a ticket form ------- -->
-  <header>
+  <header id="inicio">
     <div class="page-header min-height-400" style="background-image: url('../assets/img/bg2.jpg');" loading="lazy">
       <span class="mask bg-gradient-purple opacity-8"></span>
     </div>
@@ -102,7 +102,7 @@
     </section>
     
     <!-- proyectos -->
-    <section class="py-3">
+    <section id="proyectos" class="py-3">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
@@ -155,7 +155,7 @@
 
 
     <!-- certificados -->
-    <section class="py-3">
+    <section id="certificados" class="py-3">
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
@@ -203,7 +203,7 @@
       </div>
     </section>
   </div>
-  <section class="py-lg-5">
+  <section id="contacto" class="py-lg-5">
     <div class="container">
       <div class="row">
         <div class="col">

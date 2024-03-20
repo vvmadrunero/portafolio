@@ -271,9 +271,10 @@
                                                  <button type="button" class="btn mt-n2 btn-sm btn-outline-purple text-nowrap mb-0">Descargar</button>
                                                  </a>
                                                  </td>
-                                                 <td class="align-middle"><button class="btn btn-link text-dark mb-0">
-                                                 <span class="material-symbols-outlined opacity-6 me-1 text-xl">delete</span>
-                                                 </button></td>
+                                                 <td class="align-middle"> 
+                                                 <a class="table__item__link" href="eliminar_certificado.php?id=' . $fila['id'] . '"><span class="material-symbols-outlined opacity-6 me-1 text-xl text-danger">delete</span></a>
+                                                <a href="form_edit_certificado.php?id=' . $fila['id'] . '"><span class="material-symbols-outlined opacity-6 me-1 text-xl text-purple">edit</span></a> 
+                                                 </td> 
                                                  </tr></tbody>';
                                                 
                                             }

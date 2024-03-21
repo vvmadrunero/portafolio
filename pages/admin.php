@@ -140,17 +140,17 @@
                                 <table class="table align-items-center mb-0">
                                     <thead>
                                         <tr>
-                                        <th
-                                            class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7 ps-2">
-                                            ID</th>
-                                            <th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7">
-                                                Nombre del proyecto</th>
-                                            <th
-                                            class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7">
-                                            Etapa actual</th>
-                                                
                                             <th
                                                 class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7 ps-2">
+                                                ID</th>
+                                                <th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7 text-center">
+                                                Nombre del proyecto</th>
+                                            <th
+                                                class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7 text-center">
+                                                Etapa actual</th>
+                                                
+                                            <th
+                                                class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7 ps-5">
                                                 Descripción</th>
                                             <th
                                                 class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7 ps-2">
@@ -201,7 +201,7 @@
                                                  </span>
                                                  </td> 
                                                  
-                                                 <td  onclick="ver_textoOriginal' . $fila['id_proyecto'] . '()">
+                                                 <td style="cursor:pointer;" onclick="ver_textoOriginal' . $fila['id_proyecto'] . '()">
                                                  <div class="textoOriginal">
                                                     ' . $fila['descripcion_proyecto'] . '
                                                  </div>

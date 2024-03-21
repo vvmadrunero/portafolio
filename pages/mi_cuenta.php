@@ -11,13 +11,13 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
     $id = $_GET["id"];
 
     // Consulta SQL para obtener los datos del proyecto a editar
-    $sql = "SELECT id, nombre_usuario, contrasena FROM usuarios WHERE id=$id";
+    $sql = "SELECT id, nombre_usuario, ruta_imagen, contrasena FROM usuarios WHERE id=$id";
     $result = $conn->query($sql);
 
     if ($result->num_rows == 1) {
         // Muestra el formulario de edición con los datos actuales
         $row = $result->fetch_assoc();
-        ?>
+?>
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
 
@@ -61,58 +61,86 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
         include 'nav2.php';
     ?>
     <!-- End Navbar -->
+    <style>
+        /* Personalización adicional */
+        .custom-file-input {
+            color: #6f42c1;
+            border: 2px solid  #6f42c1;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .custom-file-input::-webkit-file-upload-button {
+            visibility: hidden;
+            color: #6f42c1;
+        }
+
+        .custom-file-input::before {
+            content: '+';
+            
+        }
+    </style>
 
         <div class="container-fluid mt-6 py-4">
-            
-            <style>
-                /* Personalización adicional */
-                .custom-file-input {
-                    color: transparent;
-                }
-    
-                .custom-file-input::-webkit-file-upload-button {
-                    visibility: hidden;
-                }
-    
-                .custom-file-input::before {
-                    content: 'Seleccionar portada';
-                    color: #6f42c1;
-                    border: 2px solid  #6f42c1;
-                    display: inline-block;
-                    padding: 6px 12px;
-                    border-radius: 4px;
-                    cursor: pointer;
-                }
-            </style>
             
             <div class="row mt-7 justify-content-center ">
                 
                 <div class="col-12 col-lg-6">
                     
                     <div class="card">
-                    <div class="mt-n5 mt-md-n5 text-center">
-                        <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="../assets/img/perfil/perfil3.jpeg" alt="vanesa" loading="lazy">
-                    </div>
+                    
                         <div class="card-body">
-                            <form action="procesar_login.php" method="POST" class="text-start">
+                            <form class="text-start">
+                                <div class="mt-md-n6 text-center">
+                                <img class="avatar avatar-xxl shadow-xl position-relative z-index-2" src="<?php echo $row['ruta_imagen']; ?>" alt="vanesa" loading="lazy">
+                                </div>
                                 <div class="input-group input-group-static my-3">
-                                <label for="nombre_usuario">Correo</label>
-                                <input type="text" id="nombre_usuario" value="<?php echo $row['nombre_usuario']; ?>" name="nombre_usuario" class="form-control" required>
+                                <label for="nombre_usuario">Usuario</label>
+                                <input type="text" id="nombre_usuario" value="<?php echo $row['nombre_usuario']; ?>" name="nombre_usuario" class="form-control" readonly>
                                 </div>
                                 <div class="input-group input-group-static mb-4">
                                 <label>Contraseña</label>
-                                <input type="text" id="contrasena" value="<?php echo $row['contrasena']; ?>" name="contrasena" class="form-control" required>
+                                <input type="password" id="contrasena" value="<?php echo $row['contrasena']; ?>" name="contrasena" class="form-control" readonly>
+                                
                                 </div>
-                                <div class="text-center mb-n4">
-                                    <?php
-                                    // Verificar si hay un mensaje de error y mostrarlo si es necesario
-                                    if (isset($_GET['error'])) {
-                                        $error = $_GET['error'];
-                                        echo "<p style='color: red;'>$error</p>";
-                                    }
-                                    ?>
+                                <div class="text-center">
+                                <a class="btn bg-purple text-white mb-0" onclick="editar_datos()">Editar datos</a>
                                 </div>
                             </form>
+
+                            <script>
+                                function editar_datos(){
+                                    Swal.fire({
+                                        showConfirmButton: false,
+                                        html: `
+                                        <form action="edit_user.php?id=1" method="POST" enctype="multipart/form-data">
+                                            <h5>Datos de usuario</h5>
+                                            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                            <div class="input-group input-group-static mb-3">
+                                                <label for="nombre_usuario">Nombre de usuario</label>
+                                                <input type="text" id="nombre_usuario" class="form-control" placeholder="ingrese" name="nombre_usuario" value="<?php echo $row['nombre_usuario']; ?>">
+                                            </div>
+
+                                            <div class="input-group input-group-static mb-3">
+                                                <label for="contrasena">Nueva contraseña</label>
+                                                <input type="password" id="contrasena" class="form-control" value="<?php echo $row['contrasena']; ?>" placeholder="ingrese" name="contrasena">
+                                            </div>
+                                            
+                                            <div class=" mb-3">
+                                            <label for="image" class="">Seleccionar nueva foto de perfil</label>
+                                                <input type="file" id="image" class="form-control custom-file-input" name="image">
+                                            </div>
+
+                                                <input type="submit"  class="btn bg-purple text-white mb-0" value="editar">
+                                            </form>
+                                        `,
+                                      });
+
+                                }
+                                
+                            </script>
+                            
 
                         </div>
                     </div>

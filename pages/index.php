@@ -157,9 +157,9 @@
                     <button type="button" class="btn bg-gradient-purple text-white btn-sm mb-0 mt-2">Visitar</button></a>
                   </div>
                   <td>
-                  <span class="badge bg-gray btn btn-outline-' . $color . ' col-12 my-auto">
+                  <span class="badge col-12 my-auto">
                   <i class="bg-success "></i>
-                  <span class="text-' . $color . ' text-xs font-weight-bold">EN ETAPA DE ' . $fila['etapas'] . '</span>
+                  <span class="text-' . $color . ' text-xs font-weight-bold">• EN ETAPA DE ' . $fila['etapas'] . '</span>
                   </span>
                   </td> 
                 </div>
@@ -176,16 +176,16 @@
                             </a>
                           </div>
                           <div class="p-2 text-center">
-                            <h5 class="font-weight-normal ">
-                              <a class="text-purple" href="' . $fila['enlace_proyecto'] . '" >' . $fila['nombre_proyecto'] . '</a>
+                            <h5 class="font-weight-normal text-purple">
+                              ' . $fila['nombre_proyecto'] . '
                             </h5>
                             Descripcion del proyecto
                             <p class=" mb-0">' . $fila['descripcion_proyecto'] . '</p>
                             <a href="' . $fila['enlace_proyecto'] . '">
                             <button type="button" class="btn bg-gradient-purple text-white btn-sm mb-0 mt-2">Visitar</button></a>
                           </div>
-                          <td>
-                          <span class="badge bg-gray btn btn-outline-' . $color . ' col-12 my-auto">
+                          <td >
+                          <span class="badge bg-gray btn btn-outline-' . $color . ' col-6 my-auto">
                           <i class="bg-success "></i>
                           <span class="text-' . $color . ' text-xs font-weight-bold">EN ETAPA DE ' . $fila['etapas'] . '</span>
                           </span>

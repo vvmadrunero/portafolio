@@ -1,4 +1,15 @@
+<!--
+=========================================================
+* Material Kit 2 - v3.0.4
+=========================================================
 
+* Product Page:  https://www.creative-tim.com/product/material-kit 
+* Copyright 2023 Creative Tim (https://www.creative-tim.com)
+* Coded by www.creative-tim.com
+
+ =========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/WebPage">
 
@@ -25,13 +36,13 @@
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
 
 
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="min-height-300 bg-purple position-absolute w-100"></div>
     
@@ -48,21 +59,21 @@
             <style>
                 /* Personalización adicional */
                 .custom-file-input {
-                    color: transparent;
+                    color: #6f42c1;
+                    border: 2px solid  #6f42c1;
+                    padding: 6px 12px;
+                    border-radius: 4px;
+                    cursor: pointer;
                 }
     
                 .custom-file-input::-webkit-file-upload-button {
                     visibility: hidden;
+                    color: #6f42c1;
                 }
     
                 .custom-file-input::before {
-                    content: 'Seleccionar archivo';
-                    color: #6f42c1;
-                    border: 2px solid  #6f42c1;
-                    display: inline-block;
-                    padding: 6px 12px;
-                    border-radius: 4px;
-                    cursor: pointer;
+                    content: '+';
+                    
                 }
             </style>
             <div class="row mt-4">
@@ -89,15 +100,27 @@
                                         html: `<div class="col-md-12">
                                             <h2>Agregar Proyecto</h2>
                                             <form action="guardar_proyecto.php" method="POST" enctype="multipart/form-data">
-                                            <div class="input-group input-group-static mb-2">
+                                            <div class="input-group input-group-static mb-3">
                                                 <label for="nombre_proyecto">Nombre del proyecto:</label>
                                                 <input type="text" id="nombre_proyecto" class="form-control" placeholder="ingrese" name="nombre_proyecto">
                                             </div>
-                                            <div class=" mb-2">
-                                            <label for="imagen" class="form-label">Selecciona una portada</label>
+                                            
+                                            <div class=" mb-3">
+                                            <label for="imagen" class="">Selecciona una portada</label>
                                                 <input type="file" id="imagen" class="form-control custom-file-input" name="imagen">
                                             </div>
-                                            <div class="input-group input-group-static mb-2">
+
+                                            <div class="mb-3">
+                                                <label for="etapas">Etapa actual del proyecto</label>
+                                                <select  class="form-select p-2" aria-label="Selecciona una opción" name="etapas" id="etapas">
+                                                    <option value="Inicio">Inicio</option>
+                                                    <option value="Planificacion">Planificación</option>
+                                                    <option value="Ejecucion">Ejecución</option>
+                                                    <option value="Supervision">Supervisión</option>
+                                                    <option value="Cierre">Cierre</option>
+                                                </select>
+                                            </div>
+                                            <div class="input-group input-group-static mb-3">
                                                 <label for="descripcion_proyecto">Descripción:</label>
                                                 <textarea id="descripcion_proyecto" class="form-control" placeholder="ingrese" name="descripcion_proyecto"></textarea>
                                             </div>
@@ -123,6 +146,10 @@
                                             <th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7">
                                                 Nombre del proyecto</th>
                                             <th
+                                            class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7">
+                                            Etapa actual</th>
+                                                
+                                            <th
                                                 class="text-uppercase text-dark text-xxs font-weight-bolder opacity-7 ps-2">
                                                 Descripción</th>
                                             <th
@@ -144,30 +171,68 @@
                                         }
 
                                         // Consultar proyectos
-                                        $consulta = "SELECT  id_proyecto, nombre_proyecto, ruta_imagen, descripcion_proyecto, enlace_proyecto FROM proyectos";
+                                        $consulta = "SELECT  id_proyecto, etapas, nombre_proyecto, ruta_imagen, descripcion_proyecto, enlace_proyecto FROM proyectos";
+                                       
                                         $resultado = $conexion->query($consulta);
-
+                                        
                                         // Mostrar proyectos 
                                         if ($resultado->num_rows > 0) {
                                             while ($fila = $resultado->fetch_assoc()) {
+                                                $color = ($fila['etapas'] == 'Inicio') ? 'dark' : 
+                                                (($fila['etapas'] == 'Planificacion') ? 'danger' : 
+                                                (($fila['etapas'] == 'Ejecucion') ? 'warning' : 
+                                                (($fila['etapas'] == 'Supervision') ? 'info' : 
+                                                (($fila['etapas'] == 'Cierre') ? 'success' : ''))));
+
                                                 echo '<tbody><tr> 
-                                                 <td><h6 class="mb-0 text-xs">' . $fila['id_proyecto'] . '</h6></td> 
-                                                 <td><div class="d-flex px-2"><div> 
-                                                 <img src="' . $fila['ruta_imagen'] . '"
-                                                class="avatar-sm  me-4"></div> 
-                                                 <div class="my-auto"><h6 class="mb-0 text-xs">' . $fila['nombre_proyecto'] . '</h6></div> 
-                                                 </div></td> 
-                                                 <td><p class="text-xs font-weight-bold mb-0">' . $fila['descripcion_proyecto'] . '</p></td> 
-                                                 <td> 
-                                                 <a target="_blank" href="' . $fila['enlace_proyecto'] . '" class="text-info text-sm icon-move-right"> 
+                                                 <td>
+                                                 <h6 class="mb-0 text-xs">' . $fila['id_proyecto'] . '</h6>
+                                                 </td> 
+                                                 <td>
+                                                 <div class="d-flex px-2"><div> 
+                                                 <img src="' . $fila['ruta_imagen'] . '" class="avatar-sm  me-4"></div> 
+                                                 <div class="my-auto"><h6 class="mb-0 text-xs">' . $fila['nombre_proyecto'] . '</h6></div>
+                                                 </td> 
+
+                                                 <td>
+                                                 <span class="badge bg-gray btn btn-outline-' . $color . ' col-12 my-auto">
+                                                 <i class="bg-success "></i>
+                                                 <span class="text-' . $color . ' text-xs font-weight-bold">' . $fila['etapas'] . '</span>
+                                                 </span>
+                                                 </td> 
+                                                 
+                                                 <td  onclick="ver_textoOriginal' . $fila['id_proyecto'] . '()">
+                                                 <div class="textoOriginal">
+                                                    ' . $fila['descripcion_proyecto'] . '
+                                                 </div>
+                                                 <p class="text-xs font-weight-bold mb-0 textoRecortado"></p>
+                                                 </td> 
+
+                                                 <td>
+                                                 <a target="_blank" href="' . $fila['enlace_proyecto'] . '.html" class="text-info text-sm icon-move-right"> 
                                                  <button type="button" class="btn mt-n2 btn-sm btn-outline-purple text-nowrap mb-0">ir</button> 
                                                  </a> 
                                                  </td>
+
                                                  <td class="align-middle"> 
                                                  <a class="table__item__link" href="eliminar_proyecto.php?id=' . $fila['id_proyecto'] . '"><span class="material-symbols-outlined opacity-6 me-1 text-xl text-danger">delete</span></a>
-                                                <a href="form_edit_proyecto.php?id=' . $fila['id_proyecto'] . '"><span class="material-symbols-outlined opacity-6 me-1 text-xl text-purple">edit</span></a> 
+                                                 <a href="form_edit_proyecto.php?id=' . $fila['id_proyecto'] . '"><span class="material-symbols-outlined opacity-6 me-1 text-xl text-purple">edit</span></a> 
                                                  </td> 
-                                                 </tr></tbody>';
+                                                 </tr></tbody>
+                                                <script>
+                                                    function ver_textoOriginal' . $fila['id_proyecto'] . '(){
+                                                        Swal.fire({
+                                                            showConfirmButton: false,
+                                                            html: `
+                                                            Descripcion del proyecto
+                                                            <p class=" mb-0">' . $fila['descripcion_proyecto'] . '</p>
+                                                            `,
+                                                        });
+
+                                                    }
+                                                    
+                                                </script>
+                                                 ';
                                             }
                                         } else {
                                             echo "No hay proyectos para mostrar";
@@ -180,6 +245,36 @@
                             </div>
                         </div>
                     </div>
+                    <!-- limite de caracteres en el texto -->
+                    <script>
+                        // Obtener todos los elementos con la clase "textoOriginal"
+                        var textosOriginales = document.querySelectorAll(".textoOriginal");
+
+                        // Recorrer cada elemento y aplicar la lógica de recorte
+                        textosOriginales.forEach(function(textoOriginal) {
+                            var texto = textoOriginal.innerText;
+
+                            // Verificar si el texto original es más largo que 80 caracteres
+                            if (texto.length > 20) {
+                            // Cortar el texto original a 80 caracteres y agregar "..."
+                            var textoRecortado = texto.substring(0, 20) + "...";
+                            // Mostrar el texto recortado en el elemento siguiente al texto original
+                            var textoRecortadoElement = document.createElement("div");
+                            textoRecortadoElement.classList.add("textoRecortado");
+                            textoRecortadoElement.innerText = textoRecortado;
+                            textoOriginal.parentNode.insertBefore(textoRecortadoElement, textoOriginal.nextSibling);
+                            } else {
+                            // Si el texto original es menor o igual a 80 caracteres, mostrarlo sin cambios
+                            var textoRecortadoElement = document.createElement("div");
+                            textoRecortadoElement.classList.add("textoRecortado");
+                            textoRecortadoElement.innerText = texto;
+                            textoOriginal.parentNode.insertBefore(textoRecortadoElement, textoOriginal.nextSibling);
+                            }
+
+                            // Ocultar el texto original
+                            textoOriginal.style.display = "none";
+                        });
+                    </script>
                    
                    
                 </div>
@@ -267,14 +362,13 @@
                                                  <div class="my-auto"><h6 class="mb-0 text-xs">' . $fila['nombre_certf'] . '</h6></div>
                                                  </div></td>
                                                  <td>
-                                                 <a target="_blank" href="' . $fila['ruta_documento'] . '" class="text-info text-sm icon-move-right">
+                                                 <a target="_blank" href="' . $fila['ruta_documento'] . '.html" class="text-info text-sm icon-move-right">
                                                  <button type="button" class="btn mt-n2 btn-sm btn-outline-purple text-nowrap mb-0">Descargar</button>
                                                  </a>
                                                  </td>
-                                                 <td class="align-middle"> 
-                                                 <a class="table__item__link" href="eliminar_certificado.php?id=' . $fila['id'] . '"><span class="material-symbols-outlined opacity-6 me-1 text-xl text-danger">delete</span></a>
-                                                <a href="form_edit_certificado.php?id=' . $fila['id'] . '"><span class="material-symbols-outlined opacity-6 me-1 text-xl text-purple">edit</span></a> 
-                                                 </td> 
+                                                 <td class="align-middle"><button class="btn btn-link text-dark mb-0">
+                                                 <span class="material-symbols-outlined opacity-6 me-1 text-xl">delete</span>
+                                                 </button></td>
                                                  </tr></tbody>';
                                                 
                                             }

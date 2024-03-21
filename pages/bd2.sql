@@ -17,6 +17,7 @@ INSERT INTO usuarios (nombre_usuario, contrasena) VALUES ('vanesa', '1234');
 CREATE TABLE proyectos (
     id_proyecto INT AUTO_INCREMENT PRIMARY KEY,
     nombre_proyecto VARCHAR(255),
+    etapas VARCHAR(255),
     ruta_imagen VARCHAR(255),
     descripcion_proyecto TEXT,
     enlace_proyecto TEXT

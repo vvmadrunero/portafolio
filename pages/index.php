@@ -33,6 +33,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <!-- CSS Files -->
   <link id="pagestyle" href="../assets/css/material-kit.css?v=3.0.4" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   <!-- Nepcha Analytics (nepcha.com) -->
   <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
   <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
@@ -120,26 +121,84 @@
       }
 
       // Consultar proyectos
-      $consulta = "SELECT nombre_proyecto, ruta_imagen, descripcion_proyecto, enlace_proyecto FROM proyectos";
+      $consulta = "SELECT id_proyecto, nombre_proyecto, etapas, ruta_imagen, descripcion_proyecto, enlace_proyecto FROM proyectos";
       $resultado = $conexion->query($consulta);
 
       // Mostrar proyectos
       if ($resultado->num_rows > 0) {
           while ($fila = $resultado->fetch_assoc()) {
-              echo '<div class="col-lg-3 col-sm-6">';
-              echo '<div class="card p-2">';
-              echo '<div class="card-header p-0 position-relative">';
-              echo '<a class="d-block blur-shadow-image"><img style="width: 100%;height: 280px;" src="' . $fila['ruta_imagen'] . '" alt="img-blur-shadow" class="img-fluid shadow border-radius-lg" loading="lazy"></a>';
-              echo '</div>';
-              echo '<div class="card-body px-0">';
-              echo '<h5 class="mt-n3"><a href="javascript:;" class="font-weight-bold text-purple">' . $fila['nombre_proyecto'] . '</a></h5>';
-              echo '<p> ' . $fila['descripcion_proyecto'] . ' </p>';
-              echo '<a href="' . $fila['enlace_proyecto'] . '" class="text-info text-sm icon-move-right">';
-              echo '<br><button type="button" class="btn mb-n3 btn-sm btn-outline-purple">Ver</button>';
-              echo '</a>';
-              echo '</div>';
-              echo '</div>';
-              echo '</div>';
+            $color = ($fila['etapas'] == 'Inicio') ? 'dark' : 
+            (($fila['etapas'] == 'Planificacion') ? 'danger' : 
+            (($fila['etapas'] == 'Ejecucion') ? 'warning' : 
+            (($fila['etapas'] == 'Supervision') ? 'info' : 
+            (($fila['etapas'] == 'Cierre') ? 'success' : ''))));
+
+              echo '
+              <div class="col-lg-3 col-sm-6">
+                <div class="card">
+                  <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                    <a onclick="ver_textoOriginal' . $fila['id_proyecto'] . '()" class="d-block blur-shadow-image">
+                      <img style="width: 100%;height: 180px;" src="' . $fila['ruta_imagen'] . '" alt="img-colored-shadow" class="img-fluid border-radius-lg">
+                    </a>
+                  </div>
+                  <div class="p-2 text-center">
+                  
+                    <h5 class="font-weight-normal ">
+                      <a class="text-purple" href="' . $fila['enlace_proyecto'] . '" >' . $fila['nombre_proyecto'] . '</a>
+                    </h5>
+                    <div class="textoOriginal">
+                    ' . $fila['descripcion_proyecto'] . '
+                    </div>
+                    <td >
+                      <p class="mb-0" class="textoRecortado">
+                      </p>
+                    </td>
+                    <a href="' . $fila['enlace_proyecto'] . '">
+                    <button type="button" class="btn bg-gradient-purple text-white btn-sm mb-0 mt-2">Visitar</button></a>
+                  </div>
+                  <td>
+                  <span class="badge bg-gray btn btn-outline-' . $color . ' col-12 my-auto">
+                  <i class="bg-success "></i>
+                  <span class="text-' . $color . ' text-xs font-weight-bold">EN ETAPA DE ' . $fila['etapas'] . '</span>
+                  </span>
+                  </td> 
+                </div>
+              </div>
+              <script>
+                function ver_textoOriginal' . $fila['id_proyecto'] . '(){
+                    Swal.fire({
+                        showConfirmButton: false,
+                        html: `
+                        <div class="">
+                          <div class="card-header p-0 position-relative mx-3 z-index-2">
+                            <a onclick="ver_textoOriginal()" class="d-block blur-shadow-image">
+                              <img style="width: 100%;height: 180px;" src="' . $fila['ruta_imagen'] . '" alt="img-colored-shadow" class="img-fluid border-radius-lg">
+                            </a>
+                          </div>
+                          <div class="p-2 text-center">
+                            <h5 class="font-weight-normal ">
+                              <a class="text-purple" href="' . $fila['enlace_proyecto'] . '" >' . $fila['nombre_proyecto'] . '</a>
+                            </h5>
+                            Descripcion del proyecto
+                            <p class=" mb-0">' . $fila['descripcion_proyecto'] . '</p>
+                            <a href="' . $fila['enlace_proyecto'] . '">
+                            <button type="button" class="btn bg-gradient-purple text-white btn-sm mb-0 mt-2">Visitar</button></a>
+                          </div>
+                          <td>
+                          <span class="badge bg-gray btn btn-outline-' . $color . ' col-12 my-auto">
+                          <i class="bg-success "></i>
+                          <span class="text-' . $color . ' text-xs font-weight-bold">EN ETAPA DE ' . $fila['etapas'] . '</span>
+                          </span>
+                          </td> 
+                        </div>
+                        
+                        `,
+                    });
+
+                }
+                  
+              </script>
+              ';
           }
       } else {
           echo "No hay proyectos para mostrar";
@@ -152,6 +211,36 @@
         </div>
       </div>
     </section>
+    <!-- limite de caracteres en el texto -->
+    <script>
+      // Obtener todos los elementos con la clase "textoOriginal"
+      var textosOriginales = document.querySelectorAll(".textoOriginal");
+
+      // Recorrer cada elemento y aplicar la lógica de recorte
+      textosOriginales.forEach(function(textoOriginal) {
+        var texto = textoOriginal.innerText;
+
+        // Verificar si el texto original es más largo que 80 caracteres
+        if (texto.length > 60) {
+          // Cortar el texto original a 80 caracteres y agregar "..."
+          var textoRecortado = texto.substring(0, 60) + "...";
+          // Mostrar el texto recortado en el elemento siguiente al texto original
+          var textoRecortadoElement = document.createElement("div");
+          textoRecortadoElement.classList.add("textoRecortado");
+          textoRecortadoElement.innerText = textoRecortado;
+          textoOriginal.parentNode.insertBefore(textoRecortadoElement, textoOriginal.nextSibling);
+        } else {
+          // Si el texto original es menor o igual a 80 caracteres, mostrarlo sin cambios
+          var textoRecortadoElement = document.createElement("div");
+          textoRecortadoElement.classList.add("textoRecortado");
+          textoRecortadoElement.innerText = texto;
+          textoOriginal.parentNode.insertBefore(textoRecortadoElement, textoOriginal.nextSibling);
+        }
+
+        // Ocultar el texto original
+        textoOriginal.style.display = "none";
+      });
+    </script>
 
 
     <!-- certificados -->

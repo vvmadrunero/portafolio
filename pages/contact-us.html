@@ -445,9 +445,36 @@
                 </div>
               </div>
               <div class="card-body">
+                
+                  <div id="textoOriginal" >
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultricies velit eget vestibulum luctus. Sed vehicula nulla sed lectus convallis, ac consequat nisl pretium. Maecenas eu lacinia quam, ac mattis nisi. Fusce auctor malesuada libero, vel bibendum nisi congue non. Vestibulum laoreet, mi ac accumsan tincidunt, nisi mauris volutpat justo, ac aliquam odio nulla in libero.
+                  </div>
+                  <br>
+
+                  <div id="textoRecortado">
+                    <!-- Aquí se mostrará el texto recortado -->
+                  </div>
+
+                  <script>
+                    function recortarTexto(texto, limite) {
+                      if (texto.length > limite) {
+                        return texto.substring(0, limite) + '...';
+                      }
+                      return texto;
+                    }
+                
+                    // Obtener el texto original
+                    var textoOriginal = document.getElementById('textoOriginal').textContent;
+                
+                    // Recortar el texto a un máximo de 80 caracteres
+                    var textoRecortado = recortarTexto(textoOriginal, 100);
+                
+                    // Mostrar el texto recortado
+                    document.getElementById('textoRecortado').textContent = textoRecortado;
+                  </script>
+
                 <p class="pb-3">
-                  For further questions, including partnership opportunities, please email hello@creative-tim.com
-                  or contact using our contact form.
+                  ssss
                 </p>
                 <form id="contact-form" method="post" autocomplete="off">
                   <div class="card-body p-0 my-3">

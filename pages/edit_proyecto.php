@@ -11,6 +11,7 @@ if ($conn->connect_error) {
 if (isset($_POST["id"]) && !empty($_POST["id"])) {
     $id = $_POST["id"];
     $nombre = $_POST["name"];
+    $etapas = $_POST["etapas"];
     $descripcion = $_POST["description"];
     $enlace = $_POST["link"];
 
@@ -41,7 +42,7 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
     }
 
     // Actualiza el registro en la base de datos
-    $sql = "UPDATE proyectos SET nombre_proyecto='$nombre', ruta_imagen='$ruta_imagen', descripcion_proyecto='$descripcion', enlace_proyecto='$enlace' WHERE id_proyecto=$id";
+    $sql = "UPDATE proyectos SET nombre_proyecto='$nombre', etapas='$etapas', ruta_imagen='$ruta_imagen', descripcion_proyecto='$descripcion', enlace_proyecto='$enlace' WHERE id_proyecto=$id";
 
     if ($conn->query($sql) === TRUE) {
         // Redirige de vuelta a la página principal después de actualizar

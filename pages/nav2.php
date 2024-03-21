@@ -38,16 +38,14 @@ if(!isset($_SESSION['nombre_usuario'])){
               <ul class="navbar-nav navbar-nav-hover ms-auto">
 
                   <li class="nav-item ms-lg-auto">
-                  <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" href="index.php"
-                      data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" href="index.php">
                       <span class="material-symbols-outlined opacity-6 me-1 text-xl">home_app_logo</span>
                       Inicio
                   </a>
                   </li>
 
                   <li class="nav-item ms-lg-auto">
-                  <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" href="cv.php"
-                      data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link ps-2 d-flex cursor-pointer align-items-center" href="cv.php">
                       <span class="material-symbols-outlined opacity-6 me-1 text-xl">assignment_ind</span>
                       Hoja de Vida 
                   </a>

@@ -11,7 +11,7 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
     $id = $_GET["id"];
 
     // Consulta SQL para obtener los datos del proyecto a editar
-    $sql = "SELECT id_proyecto, nombre_proyecto, ruta_imagen, descripcion_proyecto, enlace_proyecto FROM proyectos WHERE id_proyecto=$id";
+    $sql = "SELECT id_proyecto, nombre_proyecto, etapas, ruta_imagen, descripcion_proyecto, enlace_proyecto FROM proyectos WHERE id_proyecto=$id";
     $result = $conn->query($sql);
 
     if ($result->num_rows == 1) {
@@ -67,21 +67,21 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
             <style>
                 /* Personalización adicional */
                 .custom-file-input {
-                    color: transparent;
+                    color: #6f42c1;
+                    border: 2px solid  #6f42c1;
+                    padding: 6px 12px;
+                    border-radius: 4px;
+                    cursor: pointer;
                 }
     
                 .custom-file-input::-webkit-file-upload-button {
                     visibility: hidden;
+                    color: #6f42c1;
                 }
     
                 .custom-file-input::before {
-                    content: 'Seleccionar portada';
-                    color: #6f42c1;
-                    border: 2px solid  #6f42c1;
-                    display: inline-block;
-                    padding: 6px 12px;
-                    border-radius: 4px;
-                    cursor: pointer;
+                    content: '+';
+                    
                 }
             </style>
             
@@ -123,6 +123,17 @@ if (isset($_GET["id"]) && !empty($_GET["id"])) {
                                     <div class="input-group input-group-static mb-2">
                                         <label for="name">Nombre del Proyecto:</label>
                                         <input type="text" id="name" name="name" class="form-control" value="<?php echo $row['nombre_proyecto']; ?>">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="etapas">Etapa actual del proyecto</label>
+                                        <select  class="form-select p-2" aria-label="Selecciona una opción" name="etapas" id="etapas" >
+                                            <option value="<?php echo $row['etapas']; ?>" class="text-info bg-info"><?php echo $row['etapas']; ?></option>
+                                            <option value="Inicio">Inicio</option>
+                                            <option value="Planificacion">Planificación</option>
+                                            <option value="Ejecucion">Ejecución</option>
+                                            <option value="Supervision">Supervisión</option>
+                                            <option value="Cierre">Cierre</option>
+                                        </select>
                                     </div>
                                     <div class=" mb-2">
                                         <label for="image" class="form-label">Seleccionar imagen:</label>
